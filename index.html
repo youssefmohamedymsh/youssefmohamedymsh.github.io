@@ -317,6 +317,9 @@ button.copy:hover { opacity: 0.88; }
   .topnav { column-gap: 14px; }
   .chip { white-space: normal; }
 }
+
+.case dd .sub + .sub { margin-top: 10px; }
+.case dd .sub b { color: var(--fg); font-weight: 600; }
 </style>
 
 </head>
@@ -503,6 +506,19 @@ button.copy:hover { opacity: 0.88; }
           </div>
         </article>
 
+        <article class="case featured">
+          <div class="case-top"><span class="label">Easykash · FinFlx (YC W22) · compliance</span><div class="facts-row"><span class="result">PCI DSS Level 1</span><span class="result">ISO 27001</span><span class="result">SOC 2</span></div></div>
+          <h3>Testing and evidence that held up in PCI DSS, ISO 27001 and SOC 2 audits</h3>
+          <dl>
+            <div><dt>Situation</dt><dd>Two regulated FinTech products had formal audits to pass: a payments platform going through PCI DSS Level 1, and a gratuity and savings SaaS working towards ISO 27001 and SOC 2. Auditors don't accept "we tested it". They ask for proof that every change was tested and that the security controls actually work.</dd></div>
+            <div><dt>What I did</dt><dd><p class="sub"><b>PCI DSS (Easykash):</b> tested that card data was masked across the mobile apps, receipts and logs and never stored or shown in full; verified role-based access and least privilege for admin and merchant users; retested and documented the fixes from vulnerability scans and penetration tests; and made every release carry linked test cases, results and QA sign-off as change-control evidence.</p><p class="sub"><b>ISO 27001 and SOC 2 (FinFlx):</b> wrote the QA policies the auditors reviewed (test strategy, release process and Definition of Done, defect management), set up traceability in Jira from requirement to test case to result to release, tested the product's security controls (access, audit logging, data handling), and walked the auditors through the process, pulling evidence samples on request.</p></dd></div>
+            <div><dt>Result</dt><dd>All three passed: PCI DSS Level 1, ISO 27001 certification and the SOC 2 attestation, with QA's testing and change-control evidence accepted as part of each audit. The same habits (traceable tests, documented sign-off, security checks in every release) carried into how I run QA today.</dd></div>
+          </dl>
+          <div class="case-foot">
+            <div class="stack"><span>PCI DSS</span><span>ISO 27001</span><span>SOC 2</span><span>Security testing</span><span>Audit evidence</span><span>Jira traceability</span></div>
+          </div>
+        </article>
+
         <article class="case">
           <div class="case-top"><span class="label">Intcore · QA/QC Lead</span><span class="result">−70% bug leakage</span></div>
           <h3>Automation frameworks for multi-tenant e-commerce</h3>
@@ -548,12 +564,12 @@ button.copy:hover { opacity: 0.88; }
         </article>
 
         <article class="case">
-          <div class="case-top"><span class="label">FinFlx (YC W22) · Senior QA</span><span class="result">ISO + SOC 2</span></div>
+          <div class="case-top"><span class="label">FinFlx (YC W22) · Senior QA</span><span class="result">ISO 27001 + SOC 2</span></div>
           <h3>End-to-end QA for a FinTech SaaS platform</h3>
           <dl>
             <div><dt>Situation</dt><dd>A fast-growing gratuity and savings platform needed QA that could scale with the product and stand up to certification audits.</dd></div>
             <div><dt>What I did</dt><dd>Led QA end to end and migrated the suite from Selenium/Pytest to Java/TestNG. Covered the APIs with Rest-Assured and Postman. Co-led the move to Scrum and the Jira migration.</dd></div>
-            <div><dt>Result</dt><dd>A maintainable test stack and an Agile process that supported the ISO and SOC 2 certifications.</dd></div>
+            <div><dt>Result</dt><dd>A maintainable test stack and an Agile process that supported the ISO 27001 and SOC 2 certifications.</dd></div>
           </dl>
           <div class="stack"><span>Java</span><span>TestNG</span><span>Rest-Assured</span><span>Postman</span><span>Jira</span></div>
         </article>
@@ -631,7 +647,7 @@ button.copy:hover { opacity: 0.88; }
             <ul>
               <li>Led end-to-end QA for a SaaS FinTech gratuity and savings platform.</li>
               <li>Migrated automation from Selenium/Pytest to Java/TestNG; API testing with Rest-Assured and Postman.</li>
-              <li>Co-led the Scrum/Agile transformation and Jira migration; supported ISO and SOC 2 certification.</li>
+              <li>Co-led the Scrum/Agile transformation and Jira migration; supported ISO 27001 and SOC 2 certification.</li>
             </ul>
           </div>
         </li>
