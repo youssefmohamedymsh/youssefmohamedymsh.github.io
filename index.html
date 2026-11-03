@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f4f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1513" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2315201c'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11' stroke='%234cc38a' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<title>Youssef Mohamed, QA Lead</title>
+<meta name="description" content="QA lead with 5+ years in FinTech, telecom, payments and e-commerce. Test automation, shift-left QA and AI-augmented testing. Open to QA lead roles and freelance or per-project consulting.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Youssef Mohamed, QA Lead">
+<meta property="og:description" content="Test automation, shift-left QA and AI-augmented testing. Open to QA lead roles and freelance consulting.">
+<meta name="twitter:card" content="summary">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: a single reading column; the hero pairs a statement with a test-run report card, which is the page's one bold element. */
+:root {
+  --bg: #f2f4f2;
+  --surface: #ffffff;
+  --fg: #15201c;
+  --muted: #56645e;
+  --line: #d6ddd9;
+  --accent: #9a5208;
+  --accent-soft: #f6e6d0;
+  --pass: #18704a;
+  --pass-soft: #dcefe5;
+  --report-bg: #15201c;
+  --report-fg: #e4ece8;
+  --report-muted: #93a59d;
+
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --s-1: clamp(2.4rem, 6.2vw, 4.6rem);
+  --s-2: clamp(1.5rem, 3vw, 2.1rem);
+  --s-3: 1.2rem;
+  --s-body: 1.02rem;
+  --s-small: 0.86rem;
+  --s-label: 0.74rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1513; --surface: #17201d; --fg: #e3eae6; --muted: #9aaba3; --line: #2a3632;
+    --accent: #eba443; --accent-soft: #3a2a14; --pass: #4cc38a; --pass-soft: #163024;
+    --report-bg: #080c0b; --report-fg: #e4ece8; --report-muted: #8a9c94;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1513; --surface: #17201d; --fg: #e3eae6; --muted: #9aaba3; --line: #2a3632;
+  --accent: #eba443; --accent-soft: #3a2a14; --pass: #4cc38a; --pass-soft: #163024;
+  --report-bg: #080c0b; --report-fg: #e4ece8; --report-muted: #8a9c94;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--f-body);
+  font-size: var(--s-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.08; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+.label {
+  font-family: var(--f-mono);
+  font-size: var(--s-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- top bar ---------- */
+.skip { position: absolute; left: 16px; top: -48px; padding: 8px 14px; border-radius: 8px; background: var(--fg); color: var(--bg); font-weight: 600; text-decoration: none; z-index: 10; }
+.skip:focus { top: 12px; }
+main:focus { outline: none; }
+.topbar { padding-block: 22px; }
+.topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.mark { font-family: var(--f-display); font-stretch: 125%; font-weight: 800; letter-spacing: -0.01em; }
+.topnav { display: flex; gap: 20px; flex-wrap: wrap; font-size: var(--s-small); }
+.topnav a { text-decoration: none; color: var(--muted); }
+.topnav a:hover { color: var(--fg); }
+
+/* ---------- hero ---------- */
+.hero { padding-block: 40px 72px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 56px; align-items: center; }
+.hero-copy { display: grid; gap: 22px; min-width: 0; }
+.hero h1 {
+  font-size: var(--s-1);
+  font-weight: 850;
+  font-stretch: 118%;
+  letter-spacing: -0.025em;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+.lede { font-size: 1.14rem; color: var(--muted); max-width: 56ch; }
+.lede strong { color: var(--fg); font-weight: 600; }
+.targets { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fg);
+  background: var(--surface);
+  white-space: nowrap;
+}
+.chip.chip-accent { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+
+.report {
+  background: var(--report-bg);
+  color: var(--report-fg);
+  border-radius: 14px;
+  padding: 22px 22px 18px;
+  font-family: var(--f-mono);
+  font-size: 0.86rem;
+  min-width: 0;
+  box-shadow: 0 24px 48px -28px rgba(10, 20, 16, 0.55);
+}
+.report-head { display: flex; justify-content: space-between; gap: 12px; color: var(--report-muted); font-size: 0.76rem; padding-bottom: 14px; border-bottom: 1px dashed #33433d; }
+.report-cmd { color: var(--report-fg); }
+.report-cmd span { color: var(--report-muted); }
+.report ul { list-style: none; margin: 0; padding: 12px 0; display: grid; gap: 9px; }
+.report li { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto; gap: 10px; align-items: baseline; }
+.tick { color: #4cc38a; }
+.report .val { font-weight: 600; font-variant-numeric: tabular-nums; color: #f0b45c; white-space: nowrap; }
+.report .where { display: block; color: var(--report-muted); font-size: 0.74rem; }
+.report-foot { border-top: 1px dashed #33433d; padding-top: 12px; display: grid; gap: 10px; }
+.bar { height: 6px; border-radius: 3px; background: #4cc38a; transform-origin: left; animation: fill 1.1s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes fill { from { transform: scaleX(0.04); } to { transform: scaleX(1); } }
+.summary { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 0.78rem; }
+.summary b { color: #4cc38a; font-weight: 600; }
+
+/* ---------- sections ---------- */
+section.block { padding-block: 64px; border-top: 1px solid var(--line); }
+.block-head { display: grid; gap: 10px; margin-bottom: 36px; max-width: 64ch; }
+.block-head h2 { font-size: var(--s-2); font-weight: 800; font-stretch: 112%; letter-spacing: -0.015em; }
+.block-head p { color: var(--muted); }
+
+/* principles */
+.principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.principle { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.principle h3 { font-size: var(--s-3); font-weight: 700; font-stretch: 105%; }
+.principle p { color: var(--muted); }
+
+/* case studies */
+.cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.case {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 26px;
+  display: grid;
+  gap: 16px;
+  grid-template-rows: auto auto 1fr auto;
+  min-width: 0;
+}
+.case-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.result {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--pass);
+  background: var(--pass-soft);
+  padding: 3px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.case h3 { font-size: 1.32rem; font-weight: 750; font-stretch: 108%; letter-spacing: -0.01em; }
+.case dl { margin: 0; display: grid; gap: 10px; }
+.case dt { font-family: var(--f-mono); font-size: var(--s-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.case dd { margin: 0; color: var(--muted); font-size: 0.96rem; }
+.stack { display: flex; flex-wrap: wrap; gap: 6px; }
+.stack span { font-family: var(--f-mono); font-size: 0.74rem; color: var(--muted); border: 1px solid var(--line); border-radius: 5px; padding: 2px 7px; }
+
+/* also building */
+.also { margin-top: 28px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.also div { border-top: 2px solid var(--fg); padding-top: 12px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.also h3 { font-size: 1rem; font-weight: 700; font-stretch: 100%; }
+.also p { font-size: var(--s-small); color: var(--muted); }
+
+/* timeline */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; }
+.role { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 32px; padding-block: 26px; border-bottom: 1px solid var(--line); }
+.role:first-child { padding-top: 0; }
+.when { font-family: var(--f-mono); font-size: var(--s-small); color: var(--muted); font-variant-numeric: tabular-nums; display: grid; gap: 4px; align-content: start; }
+.when .badge { justify-self: start; font-size: 0.7rem; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 5px; }
+.role-body { display: grid; gap: 10px; min-width: 0; }
+.role-body h3 { font-size: 1.18rem; font-weight: 750; font-stretch: 105%; }
+.role-body h3 span { font-family: var(--f-body); font-weight: 400; color: var(--muted); font-size: 1rem; }
+.role-body ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; color: var(--muted); max-width: 70ch; }
+.role-body li::marker { color: var(--accent); }
+
+/* toolkit */
+.toolkit { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+.tool-group { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.tool-group .stack span { font-size: 0.8rem; color: var(--fg); background: var(--surface); }
+
+/* credentials */
+.creds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.creds ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.creds li { display: grid; gap: 2px; }
+.creds li b { font-weight: 600; }
+.creds li span { font-size: var(--s-small); color: var(--muted); }
+.creds .next b::after { content: " · next"; font-family: var(--f-mono); font-size: 0.72rem; color: var(--accent); font-weight: 500; }
+
+/* contact */
+.engage { display: grid; gap: 10px; max-width: 70ch; padding: 20px 22px; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px; }
+.engage p { color: var(--muted); }
+.engage ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; color: var(--muted); }
+.engage li::marker { color: var(--accent); }
+.engage b { color: var(--fg); font-weight: 600; }
+.contact { padding-block: 72px 88px; border-top: 1px solid var(--line); }
+.contact .wrap { display: grid; gap: 22px; }
+.contact h2 { font-size: var(--s-1); font-weight: 850; font-stretch: 118%; letter-spacing: -0.025em; max-width: 16ch; }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.email { font-family: var(--f-mono); font-size: clamp(0.95rem, 2.4vw, 1.2rem); padding: 10px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; user-select: all; overflow-wrap: anywhere; }
+button.copy {
+  font: 600 0.9rem var(--f-body);
+  padding: 11px 18px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--fg);
+  color: var(--bg);
+  cursor: pointer;
+}
+button.copy:hover { opacity: 0.88; }
+.copy-note { font-size: var(--s-small); color: var(--pass); min-height: 1.4em; }
+.foot { font-size: var(--s-small); color: var(--muted); }
+.offclock { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; padding-top: 18px; border-top: 1px solid var(--line); max-width: 64ch; }
+.offclock p { color: var(--fg); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 920px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .principles, .creds { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .toolkit, .also { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+  .cases { grid-template-columns: minmax(0, 1fr); }
+  .role { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .when { grid-auto-flow: column; justify-content: start; align-items: center; gap: 10px; }
+  .topnav { display: none; }
+}
+@media (max-width: 440px) {
+  .facts-row .result, .case-top .result { white-space: normal; }
+  .toolkit, .also { grid-template-columns: minmax(0, 1fr); }
+  .case { padding: 20px; }
+  .report { padding: 18px 16px 14px; font-size: 0.8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bar { animation: none; }
+}
+
+/* links row */
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-link { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 8px; font: 600 0.92rem var(--f-body); text-decoration: none; border: 1px solid var(--line); background: var(--surface); color: var(--fg); }
+.btn-link.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.btn-link:hover { border-color: var(--accent); }
+.btn-link svg { width: 16px; height: 16px; flex: none; }
+
+/* code you can run */
+.repos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.repo { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; gap: 10px; grid-template-rows: auto 1fr auto auto; min-width: 0; text-decoration: none; color: inherit; transition: border-color .15s ease; }
+.repo:hover { border-color: var(--accent); }
+.repo-name { font-family: var(--f-mono); font-size: 0.9rem; font-weight: 600; color: var(--fg); overflow-wrap: anywhere; }
+.repo-name::after { content: " ↗"; color: var(--muted); }
+.repo p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.repo .result { justify-self: start; align-self: start; }
+
+/* featured case study: full width, three columns of story on desktop */
+.case.featured { grid-column: 1 / -1; border-color: var(--accent); }
+.case.featured dl { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.case.featured .case-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+.case.featured .case-foot a { font: 600 0.9rem var(--f-body); color: var(--accent); }
+.facts-row { display: flex; flex-wrap: wrap; gap: 8px; }
+@media (max-width: 920px) { .case.featured dl { grid-template-columns: minmax(0, 1fr); gap: 10px; } }
+.sub-head { display: grid; gap: 6px; margin: 48px 0 24px; max-width: 64ch; }
+.sub-head h3 { font-family: var(--f-display); font-size: 1.35rem; font-weight: 800; font-stretch: 110%; margin: 0; }
+.sub-head p { margin: 0; color: var(--muted); }
+@media (max-width: 920px) { .repos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .repos { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .repo { transition: none; } }
+</style>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <span class="mark">Youssef Mohamed</span>
+    <nav class="topnav" aria-label="Sections">
+      <a href="#code">Code</a>
+      <a href="#work">Case studies</a>
+      <a href="#career">Career</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="label">QA Lead · Test automation · AI-augmented QA</span>
+        <h1>Quality that makes releases <em>faster</em>, not slower.</h1>
+        <p class="lede">I'm a QA lead with <strong>5+ years</strong> across FinTech, telecom, payments and e-commerce. I build automation frameworks from scratch, move testing earlier in the cycle, and use AI agents to take repetitive work off testers. Automation is how I remove release bottlenecks.</p>
+        <div class="targets" aria-label="Roles and engagements I'm open to">
+          <span class="chip">QA Lead</span>
+          <span class="chip">QA Manager</span>
+          <span class="chip">Senior QA Engineer</span>
+          <span class="chip">AI-augmented QA</span>
+          <span class="chip">Remote · Gulf · MENA</span>
+          <span class="chip chip-accent">Freelance &amp; per-project consulting</span>
+        </div>
+        <div class="links">
+          <a class="btn-link primary" href="https://github.com/youssefmohamedymsh" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+          <a class="btn-link" href="https://www.linkedin.com/in/youssefmohamed4/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M0 1.15C0 .52.52 0 1.18 0h13.64C15.48 0 16 .52 16 1.15v13.7c0 .63-.52 1.15-1.18 1.15H1.18C.52 16 0 15.48 0 14.85V1.15zM4.75 13.4V6.17H2.35v7.23h2.4zM3.55 5.18c.84 0 1.36-.56 1.36-1.25-.02-.71-.52-1.25-1.34-1.25-.82 0-1.36.54-1.36 1.25 0 .69.52 1.25 1.32 1.25h.02zm2.53 8.22h2.4V9.36c0-.22.02-.43.08-.59.17-.43.57-.88 1.23-.88.87 0 1.21.66 1.21 1.63v3.88h2.4V9.25c0-2.22-1.18-3.26-2.76-3.26-1.29 0-1.86.72-2.18 1.22h.02V6.17h-2.4c.03.68 0 7.23 0 7.23z"/></svg>LinkedIn</a>
+        </div>
+      </div>
+
+      <aside class="report" aria-label="Career results summary">
+        <div class="report-head">
+          <span class="report-cmd"><span>$</span> run career.spec.ts</span>
+          <span>2020 → 2026</span>
+        </div>
+        <ul>
+          <li><span class="tick">✓</span><span>Production bug leakage<span class="where">Intcore · multi-tenant apps</span></span><span class="val">−70%</span></li>
+          <li><span class="tick">✓</span><span>Manual testing &amp; docs work<span class="where">Claude + n8n automation</span></span><span class="val">−80%</span></li>
+          <li><span class="tick">✓</span><span>Team velocity<span class="where">Easykash · as Scrum Master</span></span><span class="val">+15–25%</span></li>
+          <li><span class="tick">✓</span><span>Testers trained<span class="where">EYouth &amp; AMIT Learning</span></span><span class="val">50+</span></li>
+          <li><span class="tick">✓</span><span>Course completion rate<span class="where">Project-based curriculum</span></span><span class="val">95%</span></li>
+          <li><span class="tick">✓</span><span>Compliance audits supported<span class="where">ISO · SOC 2 · PCI DSS L1</span></span><span class="val">3</span></li>
+        </ul>
+        <div class="report-foot">
+          <div class="bar" aria-hidden="true"></div>
+          <div class="summary"><span><b>6 passed</b> · 0 failed</span><span>5 companies · 3 industries</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="how">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="label">How I work</span>
+        <h2 id="how">QA as process improvement, not a gate at the end</h2>
+      </div>
+      <div class="principles">
+        <div class="principle">
+          <h3>Shift left, one Definition of Done</h3>
+          <p>Testers join refinement, review requirements before code exists, and every team signs off against the same Definition of Done. Bugs get cheaper the earlier they're found.</p>
+        </div>
+        <div class="principle">
+          <h3>Automate the bottleneck</h3>
+          <p>Frameworks are built around what blocks releases: regression, API contracts, mobile flows. Coverage that doesn't speed up a release isn't the priority.</p>
+        </div>
+        <div class="principle">
+          <h3>AI in the loop, people in charge</h3>
+          <p>Claude Code, MCP servers and n8n handle test-case drafting, self-healing scripts and reporting, so engineers spend their time on judgment and exploratory testing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="label">Selected work</span>
+        <h2 id="work-h">Proof you can open, and stories from the job</h2>
+        <p>Public repos with CI you can check yourself, then case studies from client and employer work, written without confidential details.</p>
+      </div>
+
+      <div class="sub-head" id="code" style="margin-top:0">
+        <h3>Code you can run</h3>
+        <p>Every repo has a README and tests, and runs them in GitHub Actions.</p>
+      </div>
+      <div class="repos">
+        <a class="repo" href="https://github.com/youssefmohamedymsh/unisync-e2e" target="_blank" rel="noopener">
+          <span class="repo-name">unisync-e2e</span>
+          <p>Playwright suite that turns a 214-case pilot test design into a release gate: every test tied to a case ID, a coverage report, and checks inside password-protected PDFs and spreadsheets.</p>
+          <span class="result">148 tests · 4 defects found</span>
+          <div class="stack"><span>Playwright</span><span>TypeScript</span><span>Traceability</span></div>
+        </a>
+        <a class="repo" href="https://github.com/youssefmohamedymsh/ADO-MCP-server" target="_blank" rel="noopener">
+          <span class="repo-name">ADO-MCP-server</span>
+          <p>MCP server with 26 tools that lets Claude read Azure DevOps stories, write linked test cases and log bugs.</p>
+          <span class="result">26 tools · CI</span>
+          <div class="stack"><span>TypeScript</span><span>MCP</span><span>Azure DevOps</span></div>
+        </a>
+        <a class="repo" href="https://github.com/youssefmohamedymsh/lms-e2e" target="_blank" rel="noopener">
+          <span class="repo-name">lms-e2e</span>
+          <p>Playwright suite with request-level checks, fault injection and a guard against silent errors. Found 3 bugs, tracked them, and now guards the fixes.</p>
+          <span class="result">29 tests · 3 bugs fixed</span>
+          <div class="stack"><span>Playwright</span><span>TypeScript</span></div>
+        </a>
+        <a class="repo" href="https://github.com/youssefmohamedymsh/lms-api" target="_blank" rel="noopener">
+          <span class="repo-name">lms-api</span>
+          <p>Deterministic fake backend for UI tests: isolated data per test, scenarios, a request journal, and CI that proves it matches the real API.</p>
+          <span class="result">36/36 match the real API</span>
+          <div class="stack"><span>TypeScript</span><span>OpenAPI</span><span>Node</span></div>
+        </a>
+        <a class="repo" href="https://github.com/youssefmohamedymsh/OnboardingAutomation" target="_blank" rel="noopener">
+          <span class="repo-name">OnboardingAutomation</span>
+          <p>BDD suite for a KYC/KYB business onboarding: sanctions and PEP screening, risk scoring, beneficial-owner rules, CSV invites.</p>
+          <span class="result">53 scenarios</span>
+          <div class="stack"><span>Cucumber</span><span>Selenium</span><span>Rest-Assured</span></div>
+        </a>
+        <a class="repo" href="https://github.com/youssefmohamedymsh/LearningManagementSystem" target="_blank" rel="noopener">
+          <span class="repo-name">LearningManagementSystem</span>
+          <p>My 2023 Java project, re-tested as a QA engineer: 6 defects found and fixed, each with a regression test, plus a web UI.</p>
+          <span class="result">45 tests · 6 defects fixed</span>
+          <div class="stack"><span>Java</span><span>JUnit 5</span></div>
+        </a>
+        <a class="repo" href="https://github.com/youssefmohamedymsh/E-CommerceAppAutomationTesting" target="_blank" rel="noopener">
+          <span class="repo-name">E-CommerceAppAutomationTesting</span>
+          <p>Selenium BDD suite for a demo store, refactored to fix a shared-browser bug, broken locators and assertions that could never fail.</p>
+          <span class="result">19 scenarios</span>
+          <div class="stack"><span>Selenium</span><span>Cucumber</span><span>TestNG</span></div>
+        </a>
+      </div>
+
+      <div class="sub-head">
+        <h3>Case studies from the job</h3>
+        <p>Each one: the situation, what I did, and what changed. Client names are left out.</p>
+      </div>
+
+      <div class="cases">
+        <article class="case featured">
+          <div class="case-top"><span class="label">Client project · contract QA</span><div class="facts-row"><span class="result">113 API operations faked</span><span class="result">205 UI tests</span><span class="result">0 calls to real systems</span></div></div>
+          <h3>A backend fake that lets the web portal and mobile app be tested in isolation</h3>
+          <dl>
+            <div><dt>Situation</dt><dd>A client's device-control platform, with a web portal and a mobile app. Actions in the apps reach real customer hardware, so testing against shared environments was risky, slow to set up and impossible to make fail on demand.</dd></div>
+            <div><dt>What I did</dt><dd>Built a fake of the whole backend that reuses the backend's own request handling (routing, validation, auth guards), so responses match by design, with every API operation covered and checked against the API contract. Each test login gets its own isolated data from 12 scenarios, with failures, delays and the clock controllable per test. Then built a Playwright suite for the portal on top of it: every user role, exact-request checks, failure-path tests and a known-defects register. The mobile app runs against the same fake.</dd></div>
+            <div><dt>Result</dt><dd>205 portal tests that run on a laptop and never send a request to a real environment or device, plus 118 tests on the fake itself and 44 on the suite's own logic. Confirmed portal defects stay visible as labelled tests until they're fixed, and a new backend release is absorbed by re-syncing the contract.</dd></div>
+          </dl>
+          <div class="case-foot">
+            <div class="stack"><span>Playwright</span><span>TypeScript</span><span>NestJS</span><span>OpenAPI</span><span>Contract testing</span><span>Docker</span></div>
+            <a href="https://github.com/youssefmohamedymsh/lms-api" target="_blank" rel="noopener">The same pattern, rebuilt in public: lms-api + lms-e2e ↗</a>
+          </div>
+        </article>
+
+        <article class="case featured">
+          <div class="case-top"><span class="label">Same client · shift-left review</span><div class="facts-row"><span class="result">43 backend findings · 6 critical</span><span class="result">20 portal defects filed</span></div></div>
+          <h3>Static analysis of the frontend and backend: finding what the UI can't show</h3>
+          <dl>
+            <div><dt>Situation</dt><dd>UI tests only see what the screens show. Some of the riskiest defects, like missing authorization checks, silent failures in device commands and unsafe defaults, never surface in the UI. On a platform that controls real hardware, they can't be explored on live environments either.</dd></div>
+            <div><dt>What I did</dt><dd>Before each group of UI tests, I read the portal's code, mapped every screen to the requests it sends, and listed the defects the code predicted, then confirmed them with tests. On the backend, I reviewed every controller, guard, validation rule, service, migration and CI file line by line (about 16,000 lines and 85 routes), and added strict type checking, a dependency audit, custom static-analysis rules and offline probes of library behaviour. Nothing was ever sent to a real environment or device.</dd></div>
+            <div><dt>Result</dt><dd>Backend: 43 findings (6 critical, 11 high) traced to a few root causes, each with its impact, a recommended fix and acceptance criteria, plus a phased remediation plan. Portal: 20 defects filed with the team, several first spotted in the code, each confirmed by a test or reviewed with the developers.</dd></div>
+          </dl>
+          <div class="case-foot">
+            <div class="stack"><span>Static analysis</span><span>Code review</span><span>OWASP API Top 10</span><span>Semgrep</span><span>npm audit</span><span>TypeScript</span></div>
+          </div>
+        </article>
+
+        <article class="case featured">
+          <div class="case-top"><span class="label">QA consultant · EdTech startup · automation</span><div class="facts-row"><span class="result">123 of 131 pilot blockers automated</span><span class="result">148 tests</span><span class="result">4 defects found</span></div></div>
+          <h3>From a 214-case test design to an automated pilot gate</h3>
+          <dl>
+            <div><dt>Situation</dt><dd>The pilot test design I wrote for the founder (below) had 214 cases, 131 of them pilot blockers, covering roles, data imports, password-protected sponsor reports, transcripts and transcript validation. The pilot could only start once every blocker passed, and that gate had to be re-checked on every release without a QA team to run it by hand.</dd></div>
+            <div><dt>What I did</dt><dd>Automated it in Playwright against the in-browser demo build, where the real backend and its database run inside the page, so every test gets a freshly seeded world with no server to share. Every test is tied to a case ID, and a custom reporter maps all 214 cases to passed, known defect, staging-only, manual or not yet, so no gap goes without a reason. The protected PDFs and spreadsheets are opened the way a sponsor would open them: with no password, the wrong one and the right one, then read to check field order, labels and marks.</dd></div>
+            <div><dt>Result</dt><dd>Every pilot blocker is now either automated or has a written reason (8 need the deployed stack or a person), and a full run takes about 14 minutes. The suite found 4 defects, including a crash that took down the dashboard for everyone after one unmapped sponsor code, and a demo-only bug that broke every "remove" action. Each defect stays as a labelled expected failure until it's fixed.</dd></div>
+          </dl>
+          <div class="case-foot">
+            <div class="stack"><span>Playwright</span><span>TypeScript</span><span>Test design</span><span>Traceability</span><span>PDF and XLSX checks</span><span>GitHub Actions</span></div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-top"><span class="label">Intcore · QA/QC Lead</span><span class="result">−70% bug leakage</span></div>
+          <h3>Automation frameworks for multi-tenant e-commerce</h3>
+          <dl>
+            <div><dt>Situation</dt><dd>Many tenants and corporate apps shipping on one codebase, with mostly manual regression and uneven release criteria.</dd></div>
+            <div><dt>What I did</dt><dd>Built Playwright (TypeScript) web and Appium (Java) mobile frameworks from scratch. Introduced shift-left testing, a uniform Definition of Done, SLA tracking and a bug-validation process. Mentored junior and mid-level QC engineers.</dd></div>
+            <div><dt>Result</dt><dd>Production bug leakage dropped by up to 70%.</dd></div>
+          </dl>
+          <div class="stack"><span>Playwright</span><span>TypeScript</span><span>Appium</span><span>Java</span></div>
+        </article>
+
+        <article class="case">
+          <div class="case-top"><span class="label">AI-augmented QA</span><span class="result">−80% manual work</span></div>
+          <h3>An AI testing workflow that drafts, heals and reports</h3>
+          <dl>
+            <div><dt>Situation</dt><dd>Testers were spending most of their week on writing test cases, fixing broken locators and compiling reports.</dd></div>
+            <div><dt>What I did</dt><dd>Built a custom Claude MCP server that reads Azure DevOps stories and writes test cases. Paired Claude Code with Playwright and Appium MCPs for self-healing scripts, used Atlassian Rovo for requirement reviews, and set up n8n reporting with Teams alerts.</dd></div>
+            <div><dt>Result</dt><dd>Manual testing and documentation effort cut by 80%. On one release, 201 test cases across 48 user stories were drafted through the workflow.</dd></div>
+          </dl>
+          <div class="stack"><span>Claude Code</span><span>MCP</span><span>n8n</span><span>Azure DevOps</span><span>Rovo</span></div>
+        </article>
+
+        <article class="case">
+          <div class="case-top"><span class="label">Intcore · QA/QC Lead</span><span class="result">70% capacity protected</span></div>
+          <h3>Fixing the QC bottleneck</h3>
+          <dl>
+            <div><dt>Situation</dt><dd>QC was the release bottleneck: urgent work kept entering sprints late, test estimates were guesses, and there was never time for automation.</dd></div>
+            <div><dt>What I did</dt><dd>Set up an intake-and-triage buffer for unplanned requests, with clear rules on who can pull work into a sprint, protecting 70% of capacity for committed work. Built a capacity model and a T-shirt-size complexity matrix for test estimates, ring-fenced 15–20% of each sprint for automation, and started weekly QC knowledge sessions on risk-based testing, access-control models and requirements risk.</dd></div>
+            <div><dt>Result</dt><dd>A documented process the team and stakeholders agreed on, with automation built into every sprint. It laid the groundwork for the frameworks and AI workflow above.</dd></div>
+          </dl>
+          <div class="stack"><span>Process design</span><span>Estimation</span><span>Azure DevOps</span><span>Risk-based testing</span></div>
+        </article>
+
+        <article class="case">
+          <div class="case-top"><span class="label">QA consultant · EdTech startup</span><span class="result">214 cases · go/no-go gate</span></div>
+          <h3>Pilot test strategy for a university reporting portal</h3>
+          <dl>
+            <div><dt>Situation</dt><dd>A pre-launch UK EdTech startup was heading into its first university pilot. Its product sends scholarship sponsors password-protected progress reports on their students, so one wrong or unprotected report is a serious incident. The founder brought me in to define what "ready for the pilot" means and how to prove it.</dd></div>
+            <div><dt>What I did</dt><dd>Wrote the pilot test design: 214 cases across 14 areas, 131 marked as pilot blockers, with P1–P3 priority and S1–S4 severity scales and entry and exit criteria. Designed the test data so each of 19 seeded students triggers a specific rule, plus 13 crafted edge-case files (oversized, malformed, Arabic and emoji text), and a staging mock of the student-record systems with fault scenarios.</dd></div>
+            <div><dt>Result</dt><dd>A clear go/no-go: ready when every P1 passes, at least 95% of P2 pass, no S1 or S2 defect is open, and the end-to-end journey passes twice on a fresh reseed.</dd></div>
+          </dl>
+          <div class="stack"><span>Test strategy</span><span>Risk-based testing</span><span>Test data design</span><span>Postman</span></div>
+        </article>
+
+        <article class="case">
+          <div class="case-top"><span class="label">FinFlx (YC W22) · Senior QA</span><span class="result">ISO + SOC 2</span></div>
+          <h3>End-to-end QA for a FinTech SaaS platform</h3>
+          <dl>
+            <div><dt>Situation</dt><dd>A fast-growing gratuity and savings platform needed QA that could scale with the product and stand up to certification audits.</dd></div>
+            <div><dt>What I did</dt><dd>Led QA end to end and migrated the suite from Selenium/Pytest to Java/TestNG. Covered the APIs with Rest-Assured and Postman. Co-led the move to Scrum and the Jira migration.</dd></div>
+            <div><dt>Result</dt><dd>A maintainable test stack and an Agile process that supported the ISO and SOC 2 certifications.</dd></div>
+          </dl>
+          <div class="stack"><span>Java</span><span>TestNG</span><span>Rest-Assured</span><span>Postman</span><span>Jira</span></div>
+        </article>
+
+        <article class="case">
+          <div class="case-top"><span class="label">Performance testing</span><span class="result">2 client reports</span></div>
+          <h3>Load testing a guest-invitation API</h3>
+          <dl>
+            <div><dt>Situation</dt><dd>A client needed to know how their guest-invitation API would hold up under event-day traffic.</dd></div>
+            <div><dt>What I did</dt><dd>Designed load and stress scenarios in JMeter and k6, ran them, and analysed throughput, latency and error rates.</dd></div>
+            <div><dt>Result</dt><dd>Two client-facing performance reports with clear limits and recommendations.</dd></div>
+          </dl>
+          <div class="stack"><span>k6</span><span>JMeter</span><span>Swagger</span></div>
+        </article>
+
+        <article class="case">
+          <div class="case-top"><span class="label">Tooling decision</span><span class="result">Scored POC</span></div>
+          <h3>Choosing a test platform with evidence</h3>
+          <dl>
+            <div><dt>Situation</dt><dd>The team was weighing a move off TestRail + Ranorex and needed a defensible choice, not a demo-day impression.</dd></div>
+            <div><dt>What I did</dt><dd>Built a weighted POC scoring framework and ran Katalon, ACCELQ and Testsigma through it against the existing setup. Separately compared AI test-generation tools for Azure DevOps before deciding to build our own MCP server.</dd></div>
+            <div><dt>Result</dt><dd>Katalon came out as the best value, with a scorecard the team could review and challenge.</dd></div>
+          </dl>
+          <div class="stack"><span>Katalon</span><span>ACCELQ</span><span>Testsigma</span><span>TestRail</span><span>Ranorex</span></div>
+        </article>
+
+        <article class="case">
+          <div class="case-top"><span class="label">EYouth &amp; AMIT · Instructor</span><span class="result">95% completion</span></div>
+          <h3>Teaching the next wave of testers</h3>
+          <dl>
+            <div><dt>Situation</dt><dd>Career-switchers needed job-ready testing skills, not just theory.</dd></div>
+            <div><dt>What I did</dt><dd>Designed a project-based curriculum covering ISTQB foundations, SQL, Java and Selenium/TestNG, and taught it part-time alongside my full-time role.</dd></div>
+            <div><dt>Result</dt><dd>50+ aspiring testers trained, with a 95% completion rate.</dd></div>
+          </dl>
+          <div class="stack"><span>ISTQB</span><span>SQL</span><span>Java</span><span>Selenium</span><span>TestNG</span></div>
+        </article>
+      </div>
+
+      <div class="sub-head">
+        <h3>What's next</h3>
+        <p>Applying the same testing discipline to AI systems. Each project will be a public repo with numbers in the README.</p>
+      </div>
+      <div class="also" aria-label="What's next">
+        <div><span class="label">Dec 2026</span><h3>Agentic QA assistant</h3><p>Reads a user story, generates test cases and Playwright specs, and flags gaps. Runs in GitHub Actions.</p></div>
+        <div><span class="label">Feb 2027</span><h3>LLM eval suite</h3><p>A golden dataset and scoring for accuracy, groundedness and refusals on a RAG chatbot, with a regression gate in CI.</p></div>
+        <div><span class="label">Mar 2027</span><h3>Red-team test pack</h3><p>Reusable prompt-injection, jailbreak and data-leak tests, with a findings report.</p></div>
+        <div><span class="label">Jan–Apr 2027</span><h3>ISTQB CT-GenAI and CT-AI</h3><p>Testing with generative AI, then testing AI systems.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="career" aria-labelledby="career-h">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="label">Career</span>
+        <h2 id="career-h">From mobile tester to QA lead</h2>
+      </div>
+      <ol class="timeline" reversed>
+        <li class="role">
+          <div class="when"><span>Mar 2026 – Present</span><span class="badge">Lead</span></div>
+          <div class="role-body">
+            <h3>QA/QC Lead <span>· Intcore</span></h3>
+            <ul>
+              <li>Built Playwright (TypeScript) and Appium (Java) frameworks from scratch for multi-tenant e-commerce and corporate apps.</li>
+              <li>Set up shift-left testing, a uniform Definition of Done, SLA-adherence and bug-validation processes.</li>
+              <li>Cut testers' manual work and documentation by 80% with Claude + n8n; reduced production bug leakage by up to 70%.</li>
+              <li>Mentored junior and mid-level QC engineers.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <div class="when"><span>Aug 2023 – Mar 2026</span></div>
+          <div class="role-body">
+            <h3>Senior QA Engineer <span>· FinFlx (YC W22)</span></h3>
+            <ul>
+              <li>Led end-to-end QA for a SaaS FinTech gratuity and savings platform.</li>
+              <li>Migrated automation from Selenium/Pytest to Java/TestNG; API testing with Rest-Assured and Postman.</li>
+              <li>Co-led the Scrum/Agile transformation and Jira migration; supported ISO and SOC 2 certification.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <div class="when"><span>Sep 2024 – Jan 2025</span><span class="badge">Part-time</span></div>
+          <div class="role-body">
+            <h3>Software Testing Instructor <span>· EYouth &amp; AMIT Learning</span></h3>
+            <ul>
+              <li>Taught 50+ aspiring testers ISTQB, SQL, Java and Selenium/TestNG.</li>
+              <li>Built a project-based curriculum with a 95% completion rate.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <div class="when"><span>Nov 2022 – Aug 2023</span></div>
+          <div class="role-body">
+            <h3>QA Engineer <span>· Orange Egypt</span></h3>
+            <ul>
+              <li>Tested 5–8 concurrent enterprise projects, including NPG, Siebel CRM, billing and charging.</li>
+              <li>Worked across the full SDLC, from requirements to release.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <div class="when"><span>Oct 2020 – Nov 2022</span><span class="badge">Two stints</span></div>
+          <div class="role-body">
+            <h3>Scrum Master &amp; Mobile Tester <span>· Easykash</span></h3>
+            <ul>
+              <li>Improved team velocity by 15–25% and built a metrics and KPI tracking system.</li>
+              <li>Tested the mobile apps and supported PCI DSS Level 1 certification.</li>
+              <li>Oct 2020 – May 2021 and May 2022 – Nov 2022.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="toolkit" aria-labelledby="toolkit-h">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="label">Toolkit</span>
+        <h2 id="toolkit-h">What I build and test with</h2>
+      </div>
+      <div class="toolkit">
+        <div class="tool-group">
+          <span class="label">UI &amp; mobile automation</span>
+          <div class="stack"><span>Playwright</span><span>Selenium WebDriver</span><span>Appium</span><span>TestNG</span><span>Pytest</span><span>Cucumber</span></div>
+        </div>
+        <div class="tool-group">
+          <span class="label">Languages</span>
+          <div class="stack"><span>TypeScript</span><span>Java</span><span>Python</span><span>C#</span><span>SQL</span></div>
+        </div>
+        <div class="tool-group">
+          <span class="label">API &amp; performance</span>
+          <div class="stack"><span>Rest-Assured</span><span>Postman</span><span>k6</span><span>JMeter</span><span>SoapUI</span><span>Swagger</span><span>API security review</span></div>
+        </div>
+        <div class="tool-group">
+          <span class="label">Delivery &amp; AI</span>
+          <div class="stack"><span>Claude Code</span><span>MCP</span><span>n8n</span><span>Azure DevOps</span><span>Jira</span><span>Git</span><span>Allure</span><span>Katalon</span><span>Testsigma</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="creds-h">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="label">Credentials</span>
+        <h2 id="creds-h">Certifications and education</h2>
+      </div>
+      <div class="creds">
+        <ul>
+          <li><b>ISTQB CTFL 4.0</b><span>Certified Tester, Foundation Level</span></li>
+          <li><b>Frontend Automation Testing</b><span>Udacity Nanodegree</span></li>
+          <li><b>Git and Source Control</b><span>Udacity</span></li>
+        </ul>
+        <ul>
+          <li class="next"><b>ISTQB CT-AI</b><span>Certified Tester, AI Testing</span></li>
+          <li class="next"><b>ISTQB CT-GenAI</b><span>Testing with Generative AI</span></li>
+        </ul>
+        <ul>
+          <li><b>B.Eng. Electrical Power Distribution</b><span>International Academy for Engineering and Media Science · 2020</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <span class="label">Contact</span>
+      <h2 id="contact-h">Need releases you can trust?</h2>
+      <p class="lede">I'm open to QA Lead, QA Manager and AI-augmented QA roles, remote or in the Gulf and MENA.</p>
+      <div class="engage">
+        <span class="label">Freelance &amp; per-project consulting</span>
+        <p>I also take fixed-scope projects and short consulting contracts, for example:</p>
+        <ul>
+          <li><b>Pilot or launch readiness:</b> a risk-based test design with clear go/no-go criteria, then automation to enforce it.</li>
+          <li><b>Automation from zero:</b> a Playwright, Appium or API framework your team can own, with CI and reporting.</li>
+          <li><b>Test in isolation:</b> a fake backend so the web and mobile apps can be tested without shared environments.</li>
+          <li><b>Pre-release review:</b> static analysis of the frontend and backend to find security and reliability defects the UI can't show.</li>
+          <li><b>AI-assisted QA:</b> Claude, MCP and n8n set up to draft test cases, heal scripts and report.</li>
+        </ul>
+      </div>
+      <div class="email-row">
+        <span class="email" id="email">youssefmohamed.ymsh@gmail.com</span>
+        <button class="copy" id="copy-email" type="button">Copy email</button>
+      </div>
+      <div class="links">
+          <a class="btn-link primary" href="https://github.com/youssefmohamedymsh" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+          <a class="btn-link" href="https://www.linkedin.com/in/youssefmohamed4/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M0 1.15C0 .52.52 0 1.18 0h13.64C15.48 0 16 .52 16 1.15v13.7c0 .63-.52 1.15-1.18 1.15H1.18C.52 16 0 15.48 0 14.85V1.15zM4.75 13.4V6.17H2.35v7.23h2.4zM3.55 5.18c.84 0 1.36-.56 1.36-1.25-.02-.71-.52-1.25-1.34-1.25-.82 0-1.36.54-1.36 1.25 0 .69.52 1.25 1.32 1.25h.02zm2.53 8.22h2.4V9.36c0-.22.02-.43.08-.59.17-.43.57-.88 1.23-.88.87 0 1.21.66 1.21 1.63v3.88h2.4V9.25c0-2.22-1.18-3.26-2.76-3.26-1.29 0-1.86.72-2.18 1.22h.02V6.17h-2.4c.03.68 0 7.23 0 7.23z"/></svg>LinkedIn</a>
+        </div>
+      <p class="copy-note" id="copy-note" aria-live="polite"></p>
+      <div class="offclock"><span class="label">Off the clock</span><p>AIDA 2 freediver with a 5-minute breath-hold record. I train in Cairo and Dahab.</p></div>
+      <p class="foot">© 2026 Youssef Mohamed</p>
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  var note = document.getElementById('copy-note');
+  var email = document.getElementById('email');
+  btn.addEventListener('click', function () {
+    var text = email.textContent.trim();
+    function fallback() {
+      var r = document.createRange();
+      r.selectNodeContents(email);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+      note.textContent = 'Selected. Press Ctrl+C or ⌘C to copy.';
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () {
+        note.textContent = 'Copied to clipboard.';
+      }, fallback);
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
